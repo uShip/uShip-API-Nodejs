@@ -22,9 +22,11 @@ npm test
 
 The module wraps the api and returns [when.js](https://github.com/cujojs/when "A solid, fast Promises/A+ and when() implementation, plus other async goodies.") promises.
 
+Estimate:
+
 ```
 var uShip = require("uship");
-var uship = new uShip(API_KEY, API_SECRET);
+var uship = new uShip(API_KEY, API_SECRET, USHIP_USERNAME, USHIP_PASSWORD);
 var data = {
   route: {
     items: [
@@ -106,11 +108,69 @@ Outputs:
 */
 
 ```
+
+RateRequest:
+
+```
+var shipmentDetails = {
+  route: {
+    items: [
+      {
+        address: {
+          postalCode: "78703",
+          country: "US"
+        },
+        timeFrame: {
+            earliestArrival: "2015/07/07",
+            latestArrival: "2015/07/07",
+            timeFrameType: "on"
+        }
+      },
+      {
+        address: {
+            postalCode: "78653",
+            country: "US"
+        },
+        timeFrame: {
+            earliestArrival: "2015/07/10",
+            latestArrival: "2015/07/10",
+            timeFrameType: "on"
+        }
+      }
+    ]
+  },
+    items: [
+      {
+        commodity: "CarsLightTrucks",
+        year: "2011",
+        makeName: "Ford",
+        modelName: "Escape",
+        unitCount: 1,
+        isRunning: true,
+        isConvertible: true,
+        isModified: true
+      }
+    ],
+  thirdPartyId: ""
+};
+
+uShip.rateRequest(shipmentDetails).then(function (result) {
+    console.log(result.location);
+})
+
+/* Output
+Location Header: https://api.uship.com/v2/rateRequests/rateRequestID/rates
+*/
+
+```
 **Supported Methods**
 
 Shipping Price Estimates ([API Documentation](https://developer.uship.com/docs/read/apis/oauth/Shipping_Price_Estimates))
 
+Create Rate Request ([API Documentation](https://developer.uship.com/docs/read/apis/oauth/published_rates/rate_provider/Create_Rate))
+
  * uShip::estimate(data)
+ * uShip::rateRequest(data)
 
 **Todo**
 

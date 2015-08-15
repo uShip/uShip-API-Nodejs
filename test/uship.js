@@ -8,7 +8,7 @@ describe('uShip Account', function () {
 
   it('should get an access token.', function (done) {
 
-    var uship_valid = new uShip(config.token_url, config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
+    var uship_valid = new uShip(config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
 
     uship_valid._getOAuthAccessToken().then(function(result){
 
@@ -48,7 +48,7 @@ describe('uShip Account', function () {
     };
 
 
-    var uship_valid = new uShip(config.token_url, config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
+    var uship_valid = new uShip(config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
 
     uship_valid.estimate(route).then(function(result){
 
@@ -101,7 +101,7 @@ describe('uShip Account', function () {
       thirdPartyId: ""
     };
 
-    var uship_valid = new uShip(config.token_url, config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
+    var uship_valid = new uShip(config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
 
     uship_valid.rateRequest(shipmentDetails).then(function(result){
 
