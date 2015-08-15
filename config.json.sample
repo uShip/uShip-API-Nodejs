@@ -1,4 +1,7 @@
-{ 
+{
   "uship_api_key": "YOUR_API_KEY",
-  "uship_api_secret": "YOUR_API_SECRET"
+  "uship_api_secret": "YOUR_API_SECRET",
+  "uship_username": "YOUR_DEVELOPER_USERNAME",
+  "uship_password": "YOUR_DEVELOPER_PASSWORD"
+  "token_url": "/oauth/token_authenticated"
 }

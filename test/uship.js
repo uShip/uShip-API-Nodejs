@@ -8,20 +8,11 @@ describe('uShip Account', function () {
 
   it('should get an access token.', function (done) {
 
-    var uship_valid = new uShip(config.uship_api_key, config.uship_api_secret);
-    var uship_invalid = new uShip("INVALID", "INVALID");
+    var uship_valid = new uShip(config.token_url, config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
 
-    uship_valid._getOAuthAccessToken().then(function(){
+    uship_valid._getOAuthAccessToken().then(function(result){
 
-      return uship_invalid._getOAuthAccessToken();
-
-    }).done(function(){
-
-      throw Error("Was able to get access token with invalid credentials.");
-
-    }, function(e){
-
-      assert.equal(e.message, "invalid_client");
+      assert(result);
       done();
 
     });
@@ -57,27 +48,17 @@ describe('uShip Account', function () {
     };
 
 
-    var uship_valid = new uShip(config.uship_api_key, config.uship_api_secret);
-    var uship_invalid = new uShip("INVALID", "INVALID");
+    var uship_valid = new uShip(config.token_url, config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
 
     uship_valid.estimate(route).then(function(result){
 
       assert(result.price);
-      return uship_invalid.estimate(route);
-
-    }).done(function(){
-
-      throw Error("Was able to get access token with invalid credentials.");
-
-    }, function(e){
-
-      assert.equal(e.message, "invalid_client");
       done();
 
     });
   })
 
-  it('should create a rate request.', function(done) {
+  it('should create a rate request', function(done) {
     var shipmentDetails = {
       route: {
         items: [
@@ -118,23 +99,13 @@ describe('uShip Account', function () {
         }
       ],
       thirdPartyId: ""
-    }
+    };
 
-    var uship_valid = new uShip(config.uship_api_key, config.uship_api_secret);
-    var uship_invalid = new uShip("INVALID", "INVALID");
+    var uship_valid = new uShip(config.token_url, config.uship_api_key, config.uship_api_secret, config.uship_username, config.uship_password);
 
     uship_valid.rateRequest(shipmentDetails).then(function(result){
 
-      assert(result.price);
-      return uship_invalid.rateRequest(shipmentDetails);
-
-    }).done(function(){
-
-      throw Error("Was able to get access token with invalid credentials.");
-
-    }, function(e){
-
-      assert.equal(e.message, "invalid_client");
+      assert(result.location);
       done();
 
     });
