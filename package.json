@@ -1,7 +1,7 @@
 {
   "name": "uship",
   "preferGlobal": "false",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Bryson Reynolds <bryson@brysonreynolds.com>",
   "description": "uShip API V2 Wrapper for Node.js",
   "contributors": [
