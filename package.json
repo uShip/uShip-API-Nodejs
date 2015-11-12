@@ -1,20 +1,24 @@
 {
   "name": "uship",
   "preferGlobal": "false",
-  "version": "0.0.4",
-  "author": "John Wehr <johnwehr@gmail.com>",
+  "version": "0.0.3",
+  "author": "Bryson Reynolds <bryson@brysonreynolds.com>",
   "description": "uShip API V2 Wrapper for Node.js",
   "contributors": [ 
     {
       "name": "John Wehr",
       "email": "johnwehr@gmail.com"
+    },
+    {
+      "name": "Bryson Reynolds",
+      "email": "bryson@brysonreynolds.com"
     } 
   ],
   "main": "./lib/uship.js",
-  "homepage": "https://github.com/wehriam/uship",
+  "homepage": "https://github.com/uShip/uShip-API-Nodejs",
   "repository": {
     "type": "git",
-    "url": "git@github.com:wehriam/uship.git"
+    "url": "git@github.com:uShip/uShip-API-Nodejs.git"
   },
   "keywords": [],
   "dependencies" : {
@@ -31,5 +35,11 @@
   },
   "scripts": {
     "test": "mocha"
+  },
+  "bugs": {
+    "url": "https://github.com/uShip/uShip-API-Nodejs/issues"
+  },
+  "directories": {
+    "test": "test"
   }
 }
