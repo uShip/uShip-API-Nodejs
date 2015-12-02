@@ -23,10 +23,8 @@
   "keywords": [],
   "dependencies": {
     "when": "3.4.3",
-    "underscore": "1.7.0",
     "oauth": "0.9.12",
-    "request": "2.47.0",
-    "string": "2.2.0"
+    "request": "2.47.0"
   },
   "noAnalyze": true,
   "license": "MIT",
